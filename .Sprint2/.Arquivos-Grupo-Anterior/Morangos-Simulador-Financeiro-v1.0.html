@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador - Projeto Morangos</title>
+</head>
+<body style="background-color: crimson;">
+<div style="width: 50%; float: left;">
+    <h2 style="color: paleturquoise;">Simulador financeiro para o projeto de estufa para morango</h2>
+    <img src="https://www.phosphorland.pt/wp-content/uploads/2017/09/estufas-controlo-ambiental-1.jpg"; style="height: 300px;">
+    <h3 style="color: paleturquoise;">Preço da muda do morango: R$5,90 </h3>
+    <h3 style="color: paleturquoise;">Plantas por metro quadrado: 7,5 </h3> <br>
+    <h3 style="color: paleturquoise;">Qual a área de plantação você deseja? (Em m²) </h3>
+    <input id="area"> <br><br>
+    <button onclick="calculo()" style="background-color: white; color: red;">Calcular</button> <br>
+</div>
+    <div id="exCalculo">
+    </div>
+</body>
+</html>
+<script>
+    function calculo(){
+        var muda = 7.5;
+        var preco = (area.value * muda) * 5.90;
+        exCalculo.style.float = 'left';
+        exCalculo.style.width = '40%';
+        exCalculo.innerHTML = `<br><br><br><h3 style='color: paleturquoise;'>Baseado na área de <u>${area.value}m²</u>, você precisará de <u>${area.value * muda} mudas</u>, que custarão <u>R$${preco}</u>.<br><br>Sabendo que a perda de morango por colheita é em média de 30%, o seu lucro real é de R$${preco - (preco * 0.7).toFixed(2)}. Com o nosso projeto, a sua perda cai drasticamente, aumentando o seu lucro!</h3>`;
+    }
+    h3.style.color = 'white';
+</script>
